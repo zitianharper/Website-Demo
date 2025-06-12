@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog</title>
+  <link rel="stylesheet" href="../2-CSS/global.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <h1>Blog</h1>
+  <p>Blog to be taken from Social Art Therapy here</p>
+
+  <ul id="blog-list">
+    <li><a href="/* add link here */">How Art Supports Mental Health</a></li>
+  </ul>
+
+  <script>
+    fetch("../1-index-html/navbar.html")
+      .then(response => {
+        if (!response.ok) throw new Error('Navbar not found');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+      });
+  </script>
+
+  <script src="../3-js/main.js"></script>
+
+</body>
+</html>

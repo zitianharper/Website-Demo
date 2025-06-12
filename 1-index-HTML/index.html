@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trauma-Informed Resources</title>
+  <link rel="stylesheet" href="../2-CSS/global.css" />
+</head>
+<body>
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Supportive Tools and Training for Trauma-Informed Practice</h1>
+    <p>Explore courses, publications, and curated resources for EMDR and mental health professionals.</p>
+    <a href="../4-pages/booking.html" class="button">View Courses</a>
+  </header>
+
+  <!-- EMDR Info -->
+  <section class="info-section">
+    <h2>What is EMDR?</h2>
+    <details open>
+      <summary>Eye Movement Desensitisation and Reprocessing (EMDR)</summary>
+      <p>EMDR is a form of psychotherapy that uses left/right brain stimulation to heal trauma. It is recommended by the UK's NICE for treating PTSD and has also shown benefits in treating depression, chronic pain, and other anxiety-related conditions.</p>
+    </details>
+    <details>
+      <summary>How does EMDR work?</summary>
+      <p>Traumatic experiences can become 'frozen in time' in the brain, replaying as intrusive memories. EMDR helps the brain reprocess these events, reducing distress. It mimics the brain’s natural processing during REM sleep and restores adaptive functioning.</p>
+    </details>
+    <details>
+      <summary>What does EMDR involve?</summary>
+      <p>EMDR uses bilateral stimulation (e.g., guided eye movements) while clients recall traumatic memories. This helps reprocess the experience and reduces emotional charge. It is a structured, evidence-based approach used by trained professionals.</p>
+    </details>
+    <details>
+      <summary>What is the evidence?</summary>
+      <p>EMDR is supported by more controlled studies for PTSD than any other therapy. It is often shorter in duration than other treatments and preferred by clients. Therapists also find it brings changes not achieved with other approaches.</p>
+    </details>
+  </section>
+
+  <!-- Art Therapy Info -->
+  <section class="info-section">
+    <h2>What is Art Psychotherapy?</h2>
+    <details open>
+      <summary>Understanding Art Therapy</summary>
+      <p>Art Therapy is a psychotherapy that uses creative expression to explore and process emotions. It is useful when verbal communication is difficult and supports emotional wellbeing by externalising feelings through art making.</p>
+    </details>
+    <details>
+      <summary>How does it work?</summary>
+      <p>Clients create art as part of the therapy, using it as a ‘visual diary’ of their inner experience. Speech is also used, and the process is guided collaboratively between client and therapist, focusing on meaning rather than artistic skill.</p>
+    </details>
+    <details>
+      <summary>Do I need to be good at art?</summary>
+      <p>No. Art Therapy is not about making ‘good’ or technical art. It’s a way to communicate feelings when words are not enough. The materials are used freely and interpretation happens gently, over time, in a safe therapeutic setting.</p>
+    </details>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources">
+    <h2>Explore Resources</h2>
+    <ul class="resource-grid">
+      <li><a href="../4-pages/booking.html">📚 Courses</a></li>
+      <li><a href="../4-pages/blog.html">📝 Blog</a></li>
+      <li><a href="../4-pages/mail.html">📬 Mailing List</a></li>
+      <li><a href="../4-pages/pdfs.html">📄 PDF Materials</a></li>
+      <li><a href="../4-pages/videos.html">🎥 Videos</a></li>
+      <li><a href="#">📖 Publications</a></li>
+    </ul>
+  </section>
+
+  <!-- Featured Publication -->
+  <section class="featured">
+    <h2>Featured Publication</h2>
+    <p>"Vicarious Trauma & Self-Care in EMDR Practice" – Practical tools and reflections for therapists.</p>
+    <a href="https://etq.emdrassociation.org.uk/2023/10/17/vicarious-trauma-compassion-fatigue-and-burnout-tools-for-emdr-therapists/" target="_blank" rel="noopener">Read More</a>
+  </section>
+
+  <!-- Mailing List CTA -->
+  <section class="cta">
+    <h2>Stay Updated</h2>
+    <p>Join our mailing list for upcoming courses, publications, and helpful tools.</p>
+    <a href="../4-pages/mail.html" class="button">Join Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 EMDR Art. All rights reserved.</p>
+  </footer>
+
+  <!-- Load navbar -->
+  <script>
+    fetch("../1-index-html/navbar.html")
+      .then(response => {
+        if (!response.ok) throw new Error('Navbar not found');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+      });
+  </script>
+
+  <script src="../3-js/main.js"></script>
+</body>
+</html>

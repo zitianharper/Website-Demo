@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="../2-CSS/global.css"/>
+</head>
+<body>
+  <!-- Navigation menu starts here -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Main body here -->
+  <h1>Book Your Place</h1>
+
+  <section class="course-info">
+    <h2>Upcoming EMDR & Art Therapy Courses</h2>
+
+    <article class="course">
+      <h3>In-person: South Wales – September 5th & 6th, 2025</h3>
+      <p>
+        This hands-on EMDR & Art Therapy combine is limited to 12 participants and offers deep learning and practical applications.<br />
+        <strong>Tickets available:</strong> from <strong>June 15th, 12.00 BST</strong>.
+      </p>
+    </article>
+
+    <article class="course">
+      <h3>Online: EMD-Art Course – January 16, 17 & 19, 2026</h3>
+      <p>
+        This 10-hour course (3 sessions) is for up to 9 participants and typically awards <strong>9 EMDR UK CPD points</strong> (TBC) and <strong>10 CPD hours</strong>.<br />
+        <strong>Times:</strong> 9 AM – 12 PM (UK time).<br />
+        <strong>To book:</strong> please email <a href="mailto:info@socialarttherapy.com">info@socialarttherapy.com</a>.<br />
+        See past course details here: <a href="link-to-EMD-Art-2025-page.html">EMD-Art 2025</a>
+      </p>
+    </article>
+  </section>
+
+  <section class="course-description">
+    <h2>About the Course</h2>
+  
+    <div id="course-summary">
+      <p>
+        Join us for an immersive journey into the integration of EMDR with Art Therapy, a transformative approach designed to deepen therapeutic interventions and enhance client outcomes.
+        <span id="dots">...</span>
+      </p>
+    
+      <div id="more" style="display: none;">
+        <p>This small group event accommodates a maximum of ten participants to ensure personalised attention and interactive learning.</p>
+        <p>This will be most suited to EMDR therapists, practitioners and consultants looking to bring more art to their work, EMDR trained therapists working with children and Art therapists trained or training in EMDR looking to integrate the modalities.</p>
+        <p>Led by Lee Anna Simmons, an EMDR Europe accredited Consultant and HCPC registered Art Psychotherapist, this course synthesises theory, practice, and original material from her extensive experience. Lee designed and ran the first EMDR & Art Therapy courses (via EMDR UK and the British Association of Art Therapists) and supervision group (via the Institute of Group Analysis).</p>
+        <p>Participants will explore foundational concepts including relaxation exercises, resourcing techniques, bilateral stimulation with art, flash/blink technique, and even walking methods. Legal, ethical, and contextual discussions are included, along with hands-on experiences like history taking, setting boundaries, and resource building with art.</p>
+        <p>While this course won’t qualify you as an EMDR or Art Therapist, it helps you ethically use techniques from both modalities.</p>
+        <p>It also covers all eight phases of the EMDR protocol through an art therapy lens, with focus on interweaves, vicarious trauma, and self-care strategies.</p>
+        <p><strong>CPD Credits:</strong> 10 hours Art Therapy / Psychotherapy CPD points, 9 EMDR Association UK and Europe CPD Points</p>
+        <p><strong>Total price:</strong> £360</p>
+        <p><strong>Contact:</strong> hello@EMDR.London</p>
+      </div>
+    
+      <button id="readMoreBtn" class="button" onclick="toggleReadMore()">Read more</button>
+    </div>
+    
+  </section>
+  <br />
+
+  <form id="bookingForm">
+    <h2>Booking Form</h2>
+  
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+  
+    <div class="form-group">
+      <label for="course">Select Course *</label>
+      <select id="course" name="course" required>
+        <option value="">Please Choose</option>
+        <option value="In-person South Wales - 5th-6th September 2025">In-person South Wales - 5th-6th September 2025</option>
+        <option value="Online EMDR Art - 16th-19th January 2026">Online EMDR Art - 16th-19th January 2026</option>
+
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="message">Inquiries</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+  
+    <button type="submit" class="button">Submit Booking</button>
+  </form>
+  
+
+  </form>
+
+  <script>
+    fetch("../1-index-html/navbar.html")
+      .then(response => {
+        if (!response.ok) throw new Error('Navbar not found');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+      });
+  </script>
+
+<script>
+  function toggleReadMore() {
+    const dots = document.getElementById("dots");
+    const moreText = document.getElementById("more");
+    const btn = document.getElementById("readMoreBtn");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      dots.style.display = "none";
+      btn.textContent = "Read less";
+    } else {
+      moreText.style.display = "none";
+      dots.style.display = "inline";
+      btn.textContent = "Read more";
+    }
+  }
+</script>
+
+  <script src="../3-js/booking.js"></script>
+</body>
+</html>
